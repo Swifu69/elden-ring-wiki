@@ -1,17 +1,17 @@
-import { Nav } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
+import { Nav } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 interface Props {
-    link: string,
-    name: string
+	link: string;
+	name: string;
 }
 
-function NavLink ({link, name}:Props) {
-    return(
-        <LinkContainer to={link}>
-        <Nav.Link>{name}</Nav.Link>
-        </LinkContainer>
-    )
+function NavLink({ link, name }: Props) {
+	return (
+		<LinkContainer to={link}>
+			<Nav.Link>{name}</Nav.Link>
+		</LinkContainer>
+	);
 }
 
-export default NavLink
+export default NavLink;
