@@ -3,6 +3,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useState, useEffect } from "react";
 import { query, getRest } from "../models/schema";
+import { BtnLink } from "../components/NavLink";
+import { useParams } from "react-router-dom";
 
 interface IClass {
 	id: string;
@@ -37,8 +39,10 @@ function Classes() {
 			});
 	}, [setClasses, setLoading]);
 
+	let { classId } = useParams();
+	console.log(classId)
 	return (
-		<Row xs={1} md={2} className="g-4">
+		<Row xs={1} md={2} lg={4} className="g-4">
 			{loading
 				? "Loading..."
 				: classes.length
@@ -49,6 +53,11 @@ function Classes() {
 								<Card.Body>
 									<Card.Title>{role.name}</Card.Title>
 									<Card.Text>{role.description}</Card.Text>
+									<BtnLink
+										name={role.name}
+										link={`/classes/${role.id}`}
+										variant="primary"
+									></BtnLink>
 								</Card.Body>
 							</Card>
 						</Col>

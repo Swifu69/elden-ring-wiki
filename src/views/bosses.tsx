@@ -19,7 +19,7 @@ function Bosses() {
 	useEffect(() => {
 		query(`
 		{
-			boss(limit:20) {
+			boss(limit:99) {
 				id
 				name
 				location
