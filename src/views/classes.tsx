@@ -42,7 +42,7 @@ function Classes() {
 	let { classId } = useParams();
 	console.log(classId);
 	return (
-		<Row xs={1} md={2} lg={4} className="g-4">
+		<Row xs={1} md={3} lg={5} className="g-4">
 			{loading
 				? "Loading..."
 				: classes.length

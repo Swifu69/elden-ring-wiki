@@ -1,12 +1,11 @@
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
-import { BtnLink } from "../components/NavLink";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { query, getRest } from "../models/schema";
+import { getRest } from "../models/schema";
 
 interface getClass {
 	id: string;
@@ -51,9 +50,9 @@ function classInfo() {
 			{loading && !classState ? (
 				"loading..."
 			) : (
-				<Container>
-					<Col>
-						<Card style={{ width: "18rem" }}>
+				<Row>
+					<Col md={6} lg={4}>
+						<Card>
 							<Card.Img variant="top" src={classState?.image} />
 							<Card.Body>
 								<Card.Title>{classState?.name}</Card.Title>
@@ -62,50 +61,51 @@ function classInfo() {
 							<Card.Footer>Start Level: {classState?.stats.level} </Card.Footer>
 						</Card>
 					</Col>
-
-					<Table striped bordered hover variant="dark">
-						<thead>
-							<tr>
-								<th>Stat</th>
-								<th>Stat Value</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Vigor</td>
-								<td colSpan={2}>{classState?.stats.vigor}</td>
-							</tr>
-							<tr>
-								<td>Mind</td>
-								<td colSpan={2}>{classState?.stats.mind}</td>
-							</tr>
-							<tr>
-								<td>Endurance</td>
-								<td colSpan={2}>{classState?.stats.endurance}</td>
-							</tr>
-							<tr>
-								<td>Strength</td>
-								<td colSpan={2}>{classState?.stats.strength}</td>
-							</tr>
-							<tr>
-								<td>Dexterity</td>
-								<td colSpan={2}>{classState?.stats.dexterity}</td>
-							</tr>
-							<tr>
-								<td>Intelligence</td>
-								<td colSpan={2}>{classState?.stats.inteligence}</td>
-							</tr>
-							<tr>
-								<td>Faith</td>
-								<td colSpan={2}>{classState?.stats.faith}</td>
-							</tr>
-							<tr>
-								<td>Arcane</td>
-								<td colSpan={2}>{classState?.stats.arcane}</td>
-							</tr>
-						</tbody>
-					</Table>
-				</Container>
+					<Col md={6} lg={8}>
+						<Table striped bordered hover variant="dark">
+							<thead>
+								<tr>
+									<th>Stat</th>
+									<th>Stat Level</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Vigor</td>
+									<td colSpan={2}>{classState?.stats.vigor}</td>
+								</tr>
+								<tr>
+									<td>Mind</td>
+									<td colSpan={2}>{classState?.stats.mind}</td>
+								</tr>
+								<tr>
+									<td>Endurance</td>
+									<td colSpan={2}>{classState?.stats.endurance}</td>
+								</tr>
+								<tr>
+									<td>Strength</td>
+									<td colSpan={2}>{classState?.stats.strength}</td>
+								</tr>
+								<tr>
+									<td>Dexterity</td>
+									<td colSpan={2}>{classState?.stats.dexterity}</td>
+								</tr>
+								<tr>
+									<td>Intelligence</td>
+									<td colSpan={2}>{classState?.stats.inteligence}</td>
+								</tr>
+								<tr>
+									<td>Faith</td>
+									<td colSpan={2}>{classState?.stats.faith}</td>
+								</tr>
+								<tr>
+									<td>Arcane</td>
+									<td colSpan={2}>{classState?.stats.arcane}</td>
+								</tr>
+							</tbody>
+						</Table>
+					</Col>
+				</Row>
 			)}
 		</Container>
 	);

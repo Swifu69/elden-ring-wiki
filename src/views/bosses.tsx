@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useState, useEffect } from "react";
 import { query } from "../models/schema";
+import { BtnLink } from "../components/NavLink";
 
 interface Boss {
 	id: string;
@@ -38,7 +39,7 @@ function Bosses() {
 	}, [setBosses, setLoading]);
 
 	return (
-		<Row xs={1} md={2} className="g-4">
+		<Row xs={1} md={2} lg={5} className="g-4">
 			{loading
 				? "Loading..."
 				: bosses.length
@@ -49,7 +50,11 @@ function Bosses() {
 								<Card.Body>
 									<Card.Title>{boss.name}</Card.Title>
 									<Card.Text>{boss.description}</Card.Text>
-									<Card.Footer>{boss.location}</Card.Footer>
+									<BtnLink
+										name={boss.name}
+										link={`/bosses/${boss.id}`}
+										variant="primary"
+									></BtnLink>
 								</Card.Body>
 							</Card>
 						</Col>
