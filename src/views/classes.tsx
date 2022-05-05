@@ -40,7 +40,7 @@ function Classes() {
 	}, [setClasses, setLoading]);
 
 	let { classId } = useParams();
-	console.log(classId)
+	console.log(classId);
 	return (
 		<Row xs={1} md={2} lg={4} className="g-4">
 			{loading

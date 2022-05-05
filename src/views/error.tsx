@@ -1,8 +1,5 @@
-function ErrorPage(){
-    return(
-        <h1>404 not found</h1>
-    )
+function ErrorPage() {
+	return <h1>404 not found</h1>;
 }
 
-
-export default ErrorPage
+export default ErrorPage;
