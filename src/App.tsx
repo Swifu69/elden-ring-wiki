@@ -8,6 +8,7 @@ import Home from "./views/home";
 import Classes from "./views/classes";
 import ClassInfo from "./views/classInfo";
 import ErrorPage from "./views/error";
+import Hosting from "./views/hosting"
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/bosses/:bossId" element={<BossesInfo />} />
 				<Route path="/classes" element={<Classes />} />
 				<Route path="/classes/:classId" element={<ClassInfo />} />
+				<Route path="/hosting" element={<Hosting />}/>
 				<Route path="*" element={<ErrorPage />} />
 			</Routes>
 		</BrowserRouter>

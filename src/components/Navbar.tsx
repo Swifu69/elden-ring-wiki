@@ -15,6 +15,7 @@ function NavBar() {
 						<NavLink name="Home" link="/" />
 						<NavLink name="Bosses" link="/bosses" />
 						<NavLink name="Classes" link="/classes" />
+						<NavLink name="Hosting" link="/hosting" />
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getRest } from "../models/schema";
+import Loading from "../components/Loading"
 
 interface getClass {
 	id: string;
@@ -48,7 +49,7 @@ function classInfo() {
 	return (
 		<Container>
 			{loading && !classState ? (
-				"loading..."
+				<Loading />
 			) : (
 				<Row>
 					<Col md={6} lg={4}>

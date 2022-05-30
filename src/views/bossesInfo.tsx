@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getRest } from "../models/schema";
+import Loading from "../components/Loading"
 
 interface getClass {
 	id: string;
@@ -28,17 +29,19 @@ function bossesInfo() {
 		getRest("bosses", params.bossId)
 			.then((data) => {
 				setClass(data);
-				setLoading(false);
 				console.log(data);
 			})
 			.catch((err) => {
 				console.error(err);
+			})
+			.finally(() => {
+				setLoading(false);
 			});
 	}, [setClass, setLoading]);
 	return (
 		<Container>
 			{loading && !boss ? (
-				"loading..."
+				<Loading />
 			) : (
 				<Row>
 					<Col>
